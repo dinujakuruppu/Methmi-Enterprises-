@@ -1,0 +1,22 @@
+{
+  "name": "methmi-enterprises",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Methmi Enterprises — Next.js frontend + Express/Supabase backend",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n backend,frontend -c blue,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "dev:frontend": "npm run dev -w frontend",
+    "dev:backend": "npm run dev -w backend",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "start": "concurrently -k -n backend,frontend -c blue,green \"npm run start -w backend\" \"npm run start -w frontend\"",
+    "typecheck": "npm run typecheck -w backend && npm run typecheck -w frontend",
+    "check:supabase": "npm run check:supabase -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
