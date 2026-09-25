@@ -1,0 +1,190 @@
+{
+  "tours": [
+    {
+      "slug": "sigiriya-day-tour",
+      "name": "Sigiriya Day Tour",
+      "duration": "Full Day (approx. 10–12 hours)",
+      "pickupTime": "[PICKUP TIME]",
+      "description": "Visit the iconic Sigiriya Rock Fortress, a UNESCO World Heritage Site, in a comfortable air-conditioned vehicle with a private driver for the day.",
+      "highlights": [
+        "Climb Sigiriya Rock Fortress",
+        "Ancient frescoes and Mirror Wall",
+        "Views over the Central Province lowlands",
+        "Optional stop at a local village or spice garden"
+      ],
+      "included": [
+        "Private air-conditioned transport",
+        "Experienced driver",
+        "Hotel pickup and drop-off"
+      ],
+      "startingPrice": "[TOUR PRICE]",
+      "image": "/images/tours/sigiriya-day-tour-1785315115284.jpg"
+    },
+    {
+      "slug": "galle-day-tour",
+      "name": "Galle Day Tour",
+      "duration": "Full Day (approx. 8–10 hours)",
+      "pickupTime": "[PICKUP TIME]",
+      "description": "Explore the historic Galle Fort along Sri Lanka's south coast, with time to enjoy colonial architecture, boutique shops, and ocean views.",
+      "highlights": [
+        "Galle Fort ramparts and lighthouse",
+        "Dutch colonial streets and architecture",
+        "Coastal scenery along the southern coastline",
+        "Optional beach stop"
+      ],
+      "included": [
+        "Private air-conditioned transport",
+        "Experienced driver",
+        "Hotel pickup and drop-off"
+      ],
+      "startingPrice": "[TOUR PRICE]",
+      "image": "/images/tours/galle.jpg"
+    },
+    {
+      "slug": "kandy-day-tour",
+      "name": "Kandy Day Tour",
+      "duration": "Full Day (approx. 10–12 hours)",
+      "pickupTime": "[PICKUP TIME]",
+      "description": "Discover the cultural capital of Sri Lanka, home to the Temple of the Sacred Tooth Relic and scenic hill-country views.",
+      "highlights": [
+        "Temple of the Sacred Tooth Relic",
+        "Kandy Lake and city viewpoint",
+        "Botanical gardens (optional)",
+        "Scenic hill-country drive"
+      ],
+      "included": [
+        "Private air-conditioned transport",
+        "Experienced driver",
+        "Hotel pickup and drop-off"
+      ],
+      "startingPrice": "[TOUR PRICE]",
+      "image": "/images/tours/kandy.jpg"
+    },
+    {
+      "slug": "custom-tour",
+      "name": "[TOUR NAME] — Custom Tour",
+      "duration": "[TOUR DURATION]",
+      "pickupTime": "[PICKUP TIME]",
+      "description": "A placeholder package for an additional tour. Replace this entry in src/data/tours.ts with a real itinerary, e.g. Yala Safari, Nuwara Eliya, or Ella.",
+      "highlights": [
+        "[HIGHLIGHT 1]",
+        "[HIGHLIGHT 2]",
+        "[HIGHLIGHT 3]"
+      ],
+      "included": [
+        "Private air-conditioned transport",
+        "Experienced driver",
+        "Hotel pickup and drop-off"
+      ],
+      "startingPrice": "[TOUR PRICE]",
+      "image": "/images/tours/custom.jpg"
+    }
+  ],
+  "vehicles": [
+    {
+      "slug": "van-1",
+      "name": "Toyota KDH Van (Standard)",
+      "category": "Van",
+      "seats": 8,
+      "ac": true,
+      "luggageCapacity": "4–6 large suitcases",
+      "description": "Our most popular airport transfer vehicle — spacious, air-conditioned, and comfortable for small groups and families travelling with luggage.",
+      "image": "/images/vehicles/van-1.jpg",
+      "samplePrices": {
+        "colombo": "[VEHICLE PRICE]",
+        "galle": "[VEHICLE PRICE]",
+        "sigiriya": "[VEHICLE PRICE]"
+      }
+    },
+    {
+      "slug": "van-2",
+      "name": "Toyota KDH Van (High Roof)",
+      "category": "Van",
+      "seats": 10,
+      "ac": true,
+      "luggageCapacity": "6–8 large suitcases",
+      "description": "Extra headroom and luggage space, ideal for larger families or small groups touring Sri Lanka over several days.",
+      "image": "/images/vehicles/van-2.jpg",
+      "samplePrices": {
+        "colombo": "[VEHICLE PRICE]",
+        "galle": "[VEHICLE PRICE]",
+        "sigiriya": "[VEHICLE PRICE]"
+      }
+    },
+    {
+      "slug": "van-3",
+      "name": "Nissan Caravan",
+      "category": "Van",
+      "seats": 9,
+      "ac": true,
+      "luggageCapacity": "5–7 large suitcases",
+      "description": "A reliable, well-maintained van suited to both single airport transfers and multi-day tour packages.",
+      "image": "/images/vehicles/van-3.jpg",
+      "samplePrices": {
+        "colombo": "[VEHICLE PRICE]",
+        "galle": "[VEHICLE PRICE]",
+        "sigiriya": "[VEHICLE PRICE]"
+      }
+    },
+    {
+      "slug": "car-1",
+      "name": "Toyota Corolla / Allion (Sedan)",
+      "category": "Car",
+      "seats": 3,
+      "ac": true,
+      "luggageCapacity": "2–3 suitcases",
+      "description": "A comfortable air-conditioned sedan, perfect for couples or solo travellers who want a private, efficient airport transfer.",
+      "image": "/images/vehicles/car-1.jpg",
+      "samplePrices": {
+        "colombo": "[VEHICLE PRICE]",
+        "galle": "[VEHICLE PRICE]",
+        "sigiriya": "[VEHICLE PRICE]"
+      }
+    },
+    {
+      "slug": "car-2",
+      "name": "Toyota Premio (Premium Sedan)",
+      "category": "Car",
+      "seats": 3,
+      "ac": true,
+      "luggageCapacity": "2–3 suitcases",
+      "description": "A premium, extra-comfortable sedan option for travellers who prefer a higher standard of vehicle for business or leisure trips.",
+      "image": "/images/vehicles/car-2.jpg",
+      "samplePrices": {
+        "colombo": "[VEHICLE PRICE]",
+        "galle": "[VEHICLE PRICE]",
+        "sigiriya": "[VEHICLE PRICE]"
+      }
+    },
+    {
+      "slug": "suv-1",
+      "name": "Toyota Land Cruiser / Prado (SUV)",
+      "category": "SUV",
+      "seats": 6,
+      "ac": true,
+      "luggageCapacity": "4–5 large suitcases",
+      "description": "A powerful, comfortable SUV suited to small groups and families who want extra ground clearance for hill-country and countryside routes.",
+      "image": "/images/vehicles/suv-1.jpg",
+      "samplePrices": {
+        "colombo": "[VEHICLE PRICE]",
+        "galle": "[VEHICLE PRICE]",
+        "sigiriya": "[VEHICLE PRICE]"
+      }
+    },
+    {
+      "slug": "bus-1",
+      "name": "27-Seater Coach Bus",
+      "category": "Bus",
+      "seats": 27,
+      "ac": true,
+      "luggageCapacity": "Large hold — full group luggage",
+      "description": "Our largest vehicle, ideal for tour groups, corporate travel, and larger families travelling together across Sri Lanka.",
+      "image": "/images/vehicles/bus-1.jpg",
+      "samplePrices": {
+        "colombo": "[VEHICLE PRICE]",
+        "galle": "[VEHICLE PRICE]",
+        "sigiriya": "[VEHICLE PRICE]"
+      }
+    }
+  ]
+}

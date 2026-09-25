@@ -1,0 +1,121 @@
+import { Vehicle } from "../types/vehicle.js";
+
+// Placeholder images and "[VEHICLE PRICE]" values still need replacing.
+export const vehicles: Vehicle[] = [
+  {
+    slug: "van-1",
+    name: "Toyota KDH Van (Standard)",
+    category: "Van",
+    seats: 8,
+    ac: true,
+    luggageCapacity: "4–6 large suitcases",
+    description:
+      "Our most popular airport transfer vehicle — spacious, air-conditioned, and comfortable for small groups and families travelling with luggage.",
+    image: "/images/vehicles/van-1.jpg",
+    samplePrices: {
+      colombo: "[VEHICLE PRICE]",
+      galle: "[VEHICLE PRICE]",
+      sigiriya: "[VEHICLE PRICE]",
+    },
+  },
+  {
+    slug: "van-2",
+    name: "Toyota KDH Van (High Roof)",
+    category: "Van",
+    seats: 10,
+    ac: true,
+    luggageCapacity: "6–8 large suitcases",
+    description:
+      "Extra headroom and luggage space, ideal for larger families or small groups touring Sri Lanka over several days.",
+    image: "/images/vehicles/van-2.jpg",
+    samplePrices: {
+      colombo: "[VEHICLE PRICE]",
+      galle: "[VEHICLE PRICE]",
+      sigiriya: "[VEHICLE PRICE]",
+    },
+  },
+  {
+    slug: "van-3",
+    name: "Nissan Caravan",
+    category: "Van",
+    seats: 9,
+    ac: true,
+    luggageCapacity: "5–7 large suitcases",
+    description:
+      "A reliable, well-maintained van suited to both single airport transfers and multi-day tour packages.",
+    image: "/images/vehicles/van-3.jpg",
+    samplePrices: {
+      colombo: "[VEHICLE PRICE]",
+      galle: "[VEHICLE PRICE]",
+      sigiriya: "[VEHICLE PRICE]",
+    },
+  },
+  {
+    slug: "car-1",
+    name: "Toyota Corolla / Allion (Sedan)",
+    category: "Car",
+    seats: 3,
+    ac: true,
+    luggageCapacity: "2–3 suitcases",
+    description:
+      "A comfortable air-conditioned sedan, perfect for couples or solo travellers who want a private, efficient airport transfer.",
+    image: "/images/vehicles/car-1.jpg",
+    samplePrices: {
+      colombo: "[VEHICLE PRICE]",
+      galle: "[VEHICLE PRICE]",
+      sigiriya: "[VEHICLE PRICE]",
+    },
+  },
+  {
+    slug: "car-2",
+    name: "Toyota Premio (Premium Sedan)",
+    category: "Car",
+    seats: 3,
+    ac: true,
+    luggageCapacity: "2–3 suitcases",
+    description:
+      "A premium, extra-comfortable sedan option for travellers who prefer a higher standard of vehicle for business or leisure trips.",
+    image: "/images/vehicles/car-2.jpg",
+    samplePrices: {
+      colombo: "[VEHICLE PRICE]",
+      galle: "[VEHICLE PRICE]",
+      sigiriya: "[VEHICLE PRICE]",
+    },
+  },
+  {
+    slug: "suv-1",
+    name: "Toyota Land Cruiser / Prado (SUV)",
+    category: "SUV",
+    seats: 6,
+    ac: true,
+    luggageCapacity: "4–5 large suitcases",
+    description:
+      "A powerful, comfortable SUV suited to small groups and families who want extra ground clearance for hill-country and countryside routes.",
+    image: "/images/vehicles/suv-1.jpg",
+    samplePrices: {
+      colombo: "[VEHICLE PRICE]",
+      galle: "[VEHICLE PRICE]",
+      sigiriya: "[VEHICLE PRICE]",
+    },
+  },
+  {
+    slug: "bus-1",
+    name: "27-Seater Coach Bus",
+    category: "Bus",
+    seats: 27,
+    ac: true,
+    luggageCapacity: "Large hold — full group luggage",
+    description:
+      "Our largest vehicle, ideal for tour groups, corporate travel, and larger families travelling together across Sri Lanka.",
+    image: "/images/vehicles/bus-1.jpg",
+    samplePrices: {
+      colombo: "[VEHICLE PRICE]",
+      galle: "[VEHICLE PRICE]",
+      sigiriya: "[VEHICLE PRICE]",
+    },
+  },
+];
+
+export function getVehicleBySlug(slug: string): Vehicle | undefined {
+  return vehicles.find((v) => v.slug === slug);
+}
