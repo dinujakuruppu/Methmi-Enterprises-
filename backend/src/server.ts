@@ -40,7 +40,7 @@ app.get("/health", (_req, res) => {
   res.json({
     ok: true,
     service: "methmi-backend",
-    database: isSupabaseConfigured() ? "supabase" : "local-json-fallback",
+    database: isSupabaseConfigured() ? "supabase" : "not-configured",
     time: new Date().toISOString(),
   });
 });
@@ -65,6 +65,6 @@ app.use((error: unknown, _req: express.Request, res: express.Response, _next: ex
 app.listen(PORT, () => {
   console.log(`\n  Methmi API listening on http://localhost:${PORT}`);
   console.log(
-    `  Data source: ${isSupabaseConfigured() ? "Supabase" : "local JSON fallback (set the Supabase keys in backend/.env)"}\n`,
+    `  Data source: ${isSupabaseConfigured() ? "Supabase" : "NOT CONFIGURED"}\n`,
   );
 });
