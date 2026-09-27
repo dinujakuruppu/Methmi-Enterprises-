@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { bookingEnquirySchema, BookingEnquiryInput } from "@/lib/validation";
-import { vehicles as fallbackVehicles } from "@/data/vehicles";
 import type { Vehicle } from "@/types/vehicle";
 import { trackEvent } from "@/lib/analytics";
 import { CheckCircle2, AlertTriangle, Loader2 } from "lucide-react";
@@ -22,7 +21,7 @@ export default function BookingForm({
 }: BookingFormProps) {
   const [state, setState] = useState<SubmitState>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const [vehicles, setVehicles] = useState<Vehicle[]>(fallbackVehicles);
+  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
 
   useEffect(() => {
     let cancelled = false;
