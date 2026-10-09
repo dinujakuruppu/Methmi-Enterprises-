@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { revalidateAfterTourChange } from "./actions";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Plus, Pencil, Trash2, X, AlertTriangle, Loader2 } from "lucide-react";
@@ -46,6 +47,9 @@ function tourToForm(tour: Tour): FormState {
 export default function ToursAdminClient({ initialTours }: { initialTours: Tour[] }) {
   const router = useRouter();
   const [tours, setTours] = useState<Tour[]>(initialTours);
+  useEffect(() => {
+  setTours(initialTours);
+}, [initialTours]);
   const [editingSlug, setEditingSlug] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState<FormState>(emptyForm);
@@ -53,7 +57,21 @@ export default function ToursAdminClient({ initialTours }: { initialTours: Tour[
   const [error, setError] = useState("");
   const [deleteTarget, setDeleteTarget] = useState<Tour | null>(null);
   const [deleting, setDeleting] = useState(false);
+  const [syncNotice, setSyncNotice] = useState("");
 
+async function refreshAfterWrite() {
+  try {
+    await revalidateAfterTourChange();
+
+    setSyncNotice("");
+  } catch {
+    setSyncNotice(
+      "The change was saved, but the page cache could not be refreshed."
+    );
+  }
+
+  router.refresh();
+}
   function openAdd() {
     setForm(emptyForm);
     setEditingSlug(null);
@@ -112,9 +130,10 @@ export default function ToursAdminClient({ initialTours }: { initialTours: Tour[
         return [...prev, saved];
       });
 
-      setShowForm(false);
-      setSaving(false);
-      router.refresh();
+setShowForm(false);
+setSaving(false);
+
+await refreshAfterWrite();
     } catch {
       setError("Something went wrong. Please try again.");
       setSaving(false);
@@ -122,22 +141,54 @@ export default function ToursAdminClient({ initialTours }: { initialTours: Tour[
   }
 
   async function handleDelete() {
-    if (!deleteTarget) return;
-    setDeleting(true);
-    try {
-      await fetch(`/api/admin/tours/${deleteTarget.slug}`, { method: "DELETE" });
-      setTours((prev) => prev.filter((t) => t.slug !== deleteTarget.slug));
-      setDeleteTarget(null);
-      router.refresh();
-    } finally {
-      setDeleting(false);
-    }
-  }
+  if (!deleteTarget) return;
 
+  setDeleting(true);
+  setSyncNotice("");
+
+  try {
+    const res = await fetch(
+      `/api/admin/tours/${deleteTarget.slug}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    if (!res.ok) {
+      setSyncNotice(
+        "Failed to delete tour. Please try again."
+      );
+      return;
+    }
+
+    setTours((prev) =>
+      prev.filter((t) => t.slug !== deleteTarget.slug)
+    );
+
+    setDeleteTarget(null);
+
+    await refreshAfterWrite();
+
+  } catch {
+    setSyncNotice(
+      "Something went wrong while deleting the tour."
+    );
+  } finally {
+    setDeleting(false);
+  }
+}
   const uploadSlug = editingSlug || slugify(form.name || "tour");
 
   return (
     <div>
+      {syncNotice && (
+  <p
+    role="status"
+    className="mt-4 rounded-lg bg-yellow-50 p-4 text-sm text-yellow-800"
+  >
+    {syncNotice}
+  </p>
+)}
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <h1 className="font-display text-2xl font-bold text-ink-900">Tours</h1>
